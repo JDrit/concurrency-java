@@ -10,31 +10,15 @@ import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.Timeout;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
+
+import static net.batchik.jd.concurrency.Utils.*;
 
 public class ConcurrencyTests {
 
     @Rule
     public Timeout globalTimeout= new Timeout(25, TimeUnit.SECONDS);
-
-    private static List<Thread> createThreads(final int size, final ThreadCreator creator) {
-        final List<Thread> threads = new ArrayList<>(size);
-        for (int i = 0 ; i < size ; i++) {
-            threads.add(new Thread(creator.create(i)));
-        }
-        return threads;
-    }
-
-    private static void run(final List<Thread> threads) throws InterruptedException {
-        for (final Thread thread : threads) {
-            thread.start();
-        }
-        for (final Thread thread : threads) {
-            thread.join();
-        }
-    }
 
     @Test
     public void singleWriterTest() throws InterruptedException {
