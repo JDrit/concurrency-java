@@ -39,7 +39,7 @@ public class ConcurrencyTests {
     @Test
     public void singleWriterTest() throws InterruptedException {
         final int size = 10;
-        final ReadWriteLock lock = new ReadWriteLock();
+        final ReentrantReadWriteLock lock = new ReentrantReadWriteLock();
         final List<Thread> threads = createThreads(size, id -> new WriterRunnable(id, lock));
         run(threads);
     }
