@@ -5,7 +5,7 @@ import javax.annotation.Nullable;
 import java.util.HashSet;
 import java.util.Set;
 
-public class ReadWriteLock {
+public class ReentrantReadWriteLock {
     // the number of threads waiting to write
     private int waitingWrites = 0;
 
