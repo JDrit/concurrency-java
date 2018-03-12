@@ -1,6 +1,6 @@
 package net.batchik.jd.concurrency.runnables;
 
-import net.batchik.jd.concurrency.Mutex;
+import net.batchik.jd.concurrency.mutex.Mutex;
 
 
 /**

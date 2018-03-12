@@ -15,7 +15,7 @@ public class HitCount {
     }
 
     public void recordHit() {
-        final long seconds = System.currentTimeMillis() / 1000;
+        final long seconds = TimeUnit.MILLISECONDS.toSeconds(System.currentTimeMillis());
         resize();
         currentCount++;
         if (head == null) {
@@ -48,7 +48,7 @@ public class HitCount {
         }
     }
 
-    static class Node {
+    private static class Node {
         private final long timestamp;
         private long count;
         private Node next;

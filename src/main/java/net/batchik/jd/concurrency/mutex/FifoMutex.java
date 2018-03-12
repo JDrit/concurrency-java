@@ -1,4 +1,4 @@
-package net.batchik.jd.concurrency;
+package net.batchik.jd.concurrency.mutex;
 
 import java.util.concurrent.locks.AbstractQueuedSynchronizer;
 
